@@ -1,0 +1,29 @@
+<div class="container">
+  <table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Birth</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let persona of person">
+          <td>{{persona.id}}</td>
+          <td>{{persona.fullname}}</td>
+          <td>{{persona.birth}}</td>
+          <td>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#eliminar"
+                      (click)="deletePerson(persona.id)">Eliminar
+              </button>
+              <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                      (click)="editPerson(persona)">Editar
+              </button>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+  </table>
+  </div>
